@@ -3,7 +3,7 @@
 
 class UsuarioController
 {
-    function login ()
+    function index ()
     {
         $title = "Login";
         $action = "?pagina=usuario&action=logar";
@@ -26,11 +26,17 @@ class UsuarioController
     {
         $usuario = new Usuario($_POST);
 
-        try {
-            UsuarioModel::login($usuario);
-        } catch (Exception $e)
+        if (UsuarioModel::login($usuario)) 
         {
-            echo $e->getMessage();
+            header("Location: ?pagina=contato")/
+            exit;
+        } else 
+        {
+            $message = "Usuário e/ou senha incorretos.";
+            $action = "?pagina=usuario&action=logar";
+            $title = "Login";
+            $viewPath = __DIR__ . "/../views/usuario/loginView.php";
+            require __DIR__ . "/../views/home_template.php";
         }
 
     }

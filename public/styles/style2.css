@@ -1,17 +1,10 @@
-/* Reset básico */
+/* =========================
+   RESET E BASE
+========================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-
-html {
-    background-image: url('/../adot/public/imgs/wallpaper_seamless3.jpg');
-    background-size: contain;
-    background-position: center;
-    background-repeat: repeat;
-    overflow-y: scroll;
 }
 
 html,
@@ -21,21 +14,27 @@ body {
     background-color: #f8f9fa;
 }
 
+html {
+    background-image: url('../imgs/wallpaper_seamless3.jpg');
+    /* Corrigido o caminho */
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat;
+    overflow-y: scroll;
+}
+
 body {
-    width: 1400px;
     max-width: 1400px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
 }
 
-#title_message {
-    font-size: 2rem;
-    color: #00CFFF;
-    margin-bottom: 20px;
-    text-align: center;
-}
 
+/* =========================
+   HEADER E NAVEGAÇÃO
+========================= */
 
 header {
     background-color: white;
@@ -44,9 +43,10 @@ header {
     align-items: center;
     color: black;
     padding: 10px;
-    position: relative;
     height: 100px;
     min-height: 100px;
+    flex-wrap: wrap;
+    position: relative;
 }
 
 #adote {
@@ -67,7 +67,7 @@ nav#nav_menu a {
     color: black;
 }
 
-/* NAVBAR */
+/* NAV TABELA */
 nav#nav_tabela {
     display: flex;
     flex-direction: column;
@@ -94,7 +94,11 @@ nav#nav_tabela a:hover {
     background-color: #b2dfdb;
 }
 
-/* MAIN */
+
+/* =========================
+   MAIN E VIEW
+========================= */
+
 main {
     flex: 1;
     padding: 20px;
@@ -105,19 +109,26 @@ main {
     display: flex;
     flex-direction: column;
     height: 100%;
-    flex: 1;
     justify-content: center;
     align-items: center;
 }
 
 
+/* =========================
+   FOOTER
+========================= */
+
 footer {
     background-color: #d2f4ff;
-    color: white;
+    color: #333;
     text-align: center;
     padding: 10px;
 }
 
+
+/* =========================
+   TABELAS
+========================= */
 
 table {
     width: 100%;
@@ -139,14 +150,14 @@ table td {
     text-align: left;
 }
 
-table td a {
-    text-decoration: none;
-}
-
 table tr:nth-child(even) {
     background-color: #f4f4f4;
 }
 
+
+/* =========================
+   FORMULÁRIOS
+========================= */
 
 form {
     max-width: 600px;
@@ -162,7 +173,6 @@ form {
 form label {
     font-weight: bold;
     margin-bottom: 4px;
-    display: block;
 }
 
 form input[type="text"],
@@ -220,6 +230,17 @@ form input[type="submit"]:hover {
 }
 
 
+/* =========================
+   ELEMENTOS E COMPONENTES
+========================= */
+
+#title_message {
+    font-size: 2rem;
+    color: #00CFFF;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 #texto_sobre {
     line-height: 1.6;
     margin-bottom: 20px;
@@ -227,7 +248,10 @@ form input[type="submit"]:hover {
     color: #333;
 }
 
-.btn-adicionar {
+.btn-adicionar,
+.btn-banner,
+.btn-ajuda,
+.btn-ver {
     background-color: #00CFFF;
     color: white;
     border: none;
@@ -235,11 +259,20 @@ form input[type="submit"]:hover {
     cursor: pointer;
     border-radius: 6px;
     transition: background-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
 }
 
-.btn-adicionar:hover {
-    background-color: #33dcff;
+.btn-adicionar:hover,
+.btn-banner:hover,
+.btn-ver:hover {
+    background-color: #0097b2;
 }
+
+
+/* =========================
+   PÁGINA DE ADOÇÃO / PET
+========================= */
 
 .pet-grid {
     display: grid;
@@ -294,20 +327,10 @@ form input[type="submit"]:hover {
     margin-left: 8px;
 }
 
-.ver-mais {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 8px 16px;
-    background-color: #00CFFF;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    transition: background-color 0.2s ease-in-out;
-}
 
-.ver-mais:hover {
-    background-color: #0097b2;
-}
+/* =========================
+   HOME PAGE
+========================= */
 
 .home-container {
     display: flex;
@@ -316,7 +339,6 @@ form input[type="submit"]:hover {
     padding: 20px;
     max-width: 900px;
     margin: auto;
-    font-family: sans-serif;
     height: 100%;
 }
 
@@ -332,20 +354,6 @@ form input[type="submit"]:hover {
     margin-bottom: 10px;
 }
 
-.btn-banner {
-    background-color: #00CFFF;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-.btn-banner:hover {
-    background-color: #0097b2;
-}
-
 .destaque-pets {
     text-align: center;
 }
@@ -355,22 +363,6 @@ form input[type="submit"]:hover {
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
-}
-
-
-
-.btn-ver {
-    display: inline-block;
-    margin-top: 8px;
-    padding: 6px 12px;
-    background: #00CFFF;
-    color: white;
-    border-radius: 6px;
-    text-decoration: none;
-}
-
-.btn-ver:hover {
-    background: #0097b2;
 }
 
 .porque-adotar ul {
@@ -411,4 +403,83 @@ form input[type="submit"]:hover {
 
 .btn-ajuda:hover {
     background-color: #0097b2;
+}
+
+.ver-mais {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 16px;
+    background-color: #00CFFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.ver-mais:hover {
+    background-color: #0097b2;
+}
+
+
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        padding: 20px;
+    }
+
+    nav#nav_menu {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .form-columns {
+        flex-direction: column;
+    }
+
+    .pet-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-container {
+        padding: 10px;
+    }
+
+    .porque-adotar ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .btn-adicionar,
+    .btn-banner,
+    .btn-ver {
+        width: 100%;
+        padding: 14px;
+        font-size: 1rem;
+    }
+
+    form {
+        padding: 10px;
+    }
+
+    form input,
+    form select,
+    form textarea {
+        font-size: 1rem;
+    }
+
+    .banner h1 {
+        font-size: 1.5rem;
+    }
 }

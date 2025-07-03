@@ -17,13 +17,16 @@
             <a href="?pagina=sobre">Sobre</a>
             <a href="?pagina=adocao">Adoção</a>
             <a href="?pagina=contato">Contato</a>
+            <?php if (isset($_SESSION['usuario'])): ?>
+            <a href="?pagina=tutor">ADM</a>
+            <a href="?pagina=auth&action=logout">Sair</a>
+            <?php endif; ?>
         </nav>
     </header>
     <main>
-        <?= include $viewPath; ?>
+        <?php include $viewPath; ?>
     </main>
     <footer>
-        footer
     </footer>
 </body>
 

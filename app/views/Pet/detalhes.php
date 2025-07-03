@@ -1,0 +1,39 @@
+<div class="pet-detalhes-container"
+    style="max-width: 900px; margin: 0 auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 8px rgba(0,0,0,0.1);">
+    <h2><?=$pet['nome']?></h2>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+        <div style="flex: 1; min-width: 250px;">
+            <img src="<?= $imagem ? $imagem['caminho'] : 'public/img/default.png' ?>" alt="Foto do pet"
+                style="width: 100%; border-radius: 10px; object-fit: cover;" />
+        </div>
+
+        <div style="flex: 2; min-width: 250px;">
+            <h3>Informações Gerais</h3>
+            <p><strong>Espécie:</strong> <?= $pet['especie_id'] == 1 ? 'Cachorro' : 'Gato' ?></p>
+            <p><strong>Sexo:</strong> <?= $pet['sexo'] == 0 ? 'Macho' : 'Fêmea' ?></p>
+            <p><strong>Data de Nascimento:</strong> <?= date('d/m/Y', strtotime($pet['data_nascimento'])) ?></p>
+            <?php if (!empty($pet['comentario'])): ?>
+            <p><strong>Comentários:</strong> <?= $pet['comentario'] ?></p>
+            <?php endif; ?>
+        </div>
+    </div>
+
+    <hr style="margin: 30px 0;" />
+
+    <h3>Quadro Médico</h3>
+    <ul style="list-style: none; padding: 0;">
+        <li>✅ Castrado: <?= $quadro['castrado'] ? 'Sim' : 'Não' ?></li>
+        <li>✅ Vacinado contra raiva: <?= $quadro['vacina_raiva'] ? 'Sim' : 'Não' ?></li>
+        <li>✅ Remédio para pulgas: <?= $quadro['remedio_pulga'] ? 'Sim' : 'Não' ?></li>
+        <li>✅ Remédio para carrapatos: <?= $quadro['remedio_carrapato'] ? 'Sim' : 'Não' ?></li>
+        <li>✅ Remédio para vermes: <?= $quadro['remedio_verme'] ? 'Sim' : 'Não' ?></li>
+    </ul>
+
+    <hr style="margin: 30px 0;" />
+
+    <h3>Tutor Responsável</h3>
+    <p><strong>Nome:</strong> <?= $tutor['nome_completo'] ?></p>
+    <p><strong>Contato:</strong> <a href="https://wa.me/55<?= preg_replace('/\D/', '', $tutor['contato']) ?>"
+            target="_blank" style="color: green; font-weight: bold;">Entrar em contato pelo WhatsApp</a></p>
+</div>

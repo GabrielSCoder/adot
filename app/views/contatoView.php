@@ -1,4 +1,4 @@
-<div>
+<div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
 
     <h2 style="font-size: 2rem; color: #00CFFF; margin-bottom: 20px; text-align: center;">📬 Contato</h2>
 

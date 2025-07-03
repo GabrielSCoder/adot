@@ -53,10 +53,9 @@
                 $_SESSION['usuario_id'] = $user->id;
                 $_SESSION['usuario'] = $user->usuario;
                 
-                header("Location: ?pagina=contato");
+                return true;
             } else {
-                var_dump($user);
-                echo "Usuário ou senha inválida";
+                return false;
             }
         }
     }

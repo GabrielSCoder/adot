@@ -1,0 +1,235 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    background-image: url('/../adot/public/imgs/wallpaper_seamless3.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+body {
+    width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    padding: 10px;
+    position: relative;
+    height: 100px;
+}
+
+#adote {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+nav#nav_menu {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+nav#nav_menu a {
+    text-decoration: none;
+    color: black;
+}
+
+/* NAVBAR */
+nav#nav_tabela {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    background-color: #e0f7fa;
+    border-right: 1px solid #ccc;
+}
+
+nav#nav_tabela h2 {
+    margin-bottom: 10px;
+    color: #00796b;
+}
+
+nav#nav_tabela a {
+    color: #00796b;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+nav#nav_tabela a:hover {
+    background-color: #b2dfdb;
+}
+
+/* MAIN */
+main {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.view-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+
+footer {
+    background-color: #00796b;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+table thead {
+    background-color: #00CFFF;
+    color: white;
+}
+
+table th,
+table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table td a {
+    text-decoration: none;
+}
+
+table tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+
+form {
+    max-width: 600px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 4px;
+    display: block;
+}
+
+form input[type="text"],
+form input[type="date"],
+form input[type="number"],
+form input[type="password"],
+form textarea,
+form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    font-size: 1rem;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+form input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+form button,
+form input[type="submit"] {
+    background-color: #00CFFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+form button:hover,
+form input[type="submit"]:hover {
+    background-color: #0097b2;
+}
+
+.form-columns {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.form-column {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+#texto_sobre {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.btn-adicionar {
+    background-color: #00CFFF;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.btn-adicionar:hover {
+    background-color: #33dcff;
+}

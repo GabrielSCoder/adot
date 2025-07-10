@@ -35,10 +35,12 @@ class TutorModel
     public static function create(Tutor $tutor)
     {
         $pdo  = Database::connect();
-        $stmt = $pdo->prepare("INSERT INTO tutor (nome_completo, data_nascimento, sexo) values (:nome_completo, :data_nascimento, :sexo)");
+        $stmt = $pdo->prepare("INSERT INTO tutor (nome_completo, data_nascimento, sexo, contato, contato_extra) values (:nome_completo, :data_nascimento, :sexo, :contato, :contato_extra)");
         $stmt->bindParam(":nome_completo", $tutor->nome_completo);
         $stmt->bindParam(":data_nascimento", $tutor->data_nascimento);
         $stmt->bindParam(":sexo", $tutor->sexo);
+        $stmt->bindParam(":contato", $tutor->contato);
+        $stmt->bindParam(":contato_extra", $tutor->contato_extra);
         return $stmt->execute();
     }
 
@@ -52,13 +54,15 @@ class TutorModel
             $enderecoId = EnderecoModel::create($endereco, $pdo);
 
             $stmt2 = $pdo->prepare("
-            INSERT INTO tutor (nome_completo, data_nascimento, sexo, endereco_id)
-            VALUES (:nome_completo, :data_nascimento, :sexo, :endereco_id)
+            INSERT INTO tutor (nome_completo, data_nascimento, sexo, endereco_id, contato, contato_extra)
+            VALUES (:nome_completo, :data_nascimento, :sexo, :endereco_id, :contato, :contato_extra)
             ");
             $stmt2->bindParam(":nome_completo", $tutor->nome_completo);
             $stmt2->bindParam(":data_nascimento", $tutor->data_nascimento);
             $stmt2->bindParam(":sexo", $tutor->sexo);
             $stmt2->bindParam(":endereco_id", $enderecoId);
+            $stmt2->bindParam(":contato", $tutor->contato);
+            $stmt2->bindParam(":contato_extra", $tutor->contato_extra);
             $stmt2->execute();
 
             $pdo->commit();
@@ -75,11 +79,13 @@ class TutorModel
     public static function update(Tutor $tutor)
     {
         $pdo  = Database::connect();
-        $stmt = $pdo->prepare("UPDATE tutor SET nome_completo = :nome_completo, data_nascimento = :data_nascimento, sexo = :sexo WHERE id = :id");
+        $stmt = $pdo->prepare("UPDATE tutor SET nome_completo = :nome_completo, data_nascimento = :data_nascimento, sexo = :sexo, contato = :contato, contato_extra = :contato_extra WHERE id = :id");
         $stmt->bindParam(":id", $tutor->id);
         $stmt->bindParam(":nome_completo", $tutor->nome_completo);
         $stmt->bindParam(":data_nascimento", $tutor->data_nascimento);
         $stmt->bindParam(":sexo", $tutor->sexo);
+        $stmt->bindParam(":contato", $tutor->contato);
+        $stmt->bindParam(":contato_extra", $tutor->contato_extra);
         return $stmt->execute();
     }
 
@@ -93,11 +99,13 @@ class TutorModel
 
             EnderecoModel::update($endereco, $pdo);
 
-            $stmt = $pdo->prepare("UPDATE tutor SET nome_completo = :nome_completo, data_nascimento = :data_nascimento, sexo = :sexo WHERE id = :id");
+            $stmt = $pdo->prepare("UPDATE tutor SET nome_completo = :nome_completo, data_nascimento = :data_nascimento, sexo = :sexo, contato = :contato, contato_extra = :contato_extra WHERE id = :id");
             $stmt->bindParam(":id", $tutor->id);
             $stmt->bindParam(":nome_completo", $tutor->nome_completo);
             $stmt->bindParam(":data_nascimento", $tutor->data_nascimento);
             $stmt->bindParam(":sexo", $tutor->sexo);
+            $stmt->bindParam(":contato", $tutor->contato);
+            $stmt->bindParam(":contato_extra", $tutor->contato_extra);
             $stmt->execute();
 
             $pdo->commit();

@@ -4,7 +4,7 @@ class HomeController
 {
     public function index()
     {
-        $title = "Home";
+        $title = "Adot";
         $message = "Página inicial";        
         $viewPath = __DIR__ . "/../views/homeView.php";
         

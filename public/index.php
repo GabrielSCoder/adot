@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+date_default_timezone_set("America/Fortaleza");
 
 spl_autoload_register(function ($class)
 {
@@ -23,7 +24,7 @@ spl_autoload_register(function ($class)
 });
 
 
-require_once '../app/core/core.php';
+require_once __DIR__ . '/../app/core/Core.php';
 
 $core = new Router();
 

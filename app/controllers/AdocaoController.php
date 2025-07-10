@@ -29,6 +29,9 @@ class AdocaoController
         $tutor = TutorModel::getById($pet['tutor_id']);
         $endereco = EnderecoModel::getById($tutor['endereco_id']);
         $viewPath = __DIR__ . "/../views/Pet/detalhes.php";
+        $imagem = ImagemPetModel::getFistImgPetById($pet['id']);
+        $pet['foto_url'] = $imagem ? $imagem['caminho'] : 'img/default.png';
+        
         include __DIR__ . "/../views/home_template.php";
     }
 }

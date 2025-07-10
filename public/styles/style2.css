@@ -47,6 +47,7 @@ header {
     min-height: 100px;
     flex-wrap: wrap;
     position: relative;
+    margin-bottom: 5px;
 }
 
 #adote {
@@ -365,6 +366,7 @@ form input[type="submit"]:hover {
     flex-wrap: wrap;
 }
 
+
 .porque-adotar ul {
     list-style: none;
     padding: 0;
@@ -432,13 +434,12 @@ form input[type="submit"]:hover {
         flex-direction: column;
         height: auto;
         text-align: center;
-        padding: 20px;
+        /* padding: 20px; */
     }
 
     nav#nav_menu {
-        flex-direction: column;
+        /* flex-direction: column; */
         gap: 10px;
-        margin-top: 10px;
     }
 
     .form-columns {
@@ -456,6 +457,10 @@ form input[type="submit"]:hover {
     .porque-adotar ul {
         flex-direction: column;
         gap: 15px;
+    }
+
+    .porque-adotar h2 {
+        text-align: center;
     }
 }
 

@@ -1,15 +1,17 @@
 <div class="pet-detalhes-container"
     style="max-width: 900px; margin: 0 auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 8px rgba(0,0,0,0.1);">
-    <h2><?=$pet['nome']?></h2>
+    <h2 style="text-align: center; margin-bottom: 20px; font-weight: bold;"><?=$pet['nome']?></h2>
+    <hr />
 
-    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
         <div style="flex: 1; min-width: 250px;">
             <img src="<?= $imagem ? $imagem['caminho'] : 'public/img/default.png' ?>" alt="Foto do pet"
                 style="width: 100%; border-radius: 10px; object-fit: cover;" />
         </div>
 
-        <div style="flex: 2; min-width: 250px;">
-            <h3>Informações Gerais</h3>
+        <div
+            style="flex: 2; min-width: 250px;display: flex; flex-direction: column; align-items: start; justify-content: center; gap: 5px;">
+            <h3>Informações gerais</h3>
             <p><strong>Espécie:</strong> <?= $pet['especie_id'] == 1 ? 'Cachorro' : 'Gato' ?></p>
             <p><strong>Sexo:</strong> <?= $pet['sexo'] == 0 ? 'Macho' : 'Fêmea' ?></p>
             <p><strong>Data de Nascimento:</strong> <?= date('d/m/Y', strtotime($pet['data_nascimento'])) ?></p>

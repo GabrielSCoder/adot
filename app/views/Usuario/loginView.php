@@ -1,5 +1,6 @@
-<div>
-    <form method="post" action="<?=$action?>">
+<div class="view-content">
+    <h2>Login</h2>
+    <form method="post" action="<?=$action?>" style="width: 400px;">
         <label>Usuario</label>
         <input type="text" name="usuario" />
         <label>Senha</label>

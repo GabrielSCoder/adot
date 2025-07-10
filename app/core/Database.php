@@ -6,10 +6,14 @@ class Database
 {
     private static $pdo;
 
-    public static function connect($env = 'dev')
+   public static function connect($env = null)
     {
         if (!isset(self::$pdo))
         {
+            if ($env === null) {
+                $env = ($_SERVER['HTTP_HOST'] === 'localhost') ? 'dev' : 'prod';
+            }
+
             $config = $env === 'prod'
                 ? DBConfig::getProdConfig()
                 : DBConfig::getDevConfig();
@@ -28,4 +32,5 @@ class Database
 
         return self::$pdo;
     }
+
 }

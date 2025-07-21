@@ -46,6 +46,12 @@
                         <?php echo $tutor['nome_completo']; ?></option>
                     <?php endforeach; ?>
                 </select>
+
+                <label>
+                    Comentário
+                </label>
+                <textarea placeholder="Fale um pouco sobre o pet"
+                    name="comentario"><?= $pet['comentario'] ?? '' ?></textarea>
             </div>
 
             <div class="form-colum" style="background-color: white;">

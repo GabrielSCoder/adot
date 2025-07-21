@@ -34,6 +34,7 @@
     <footer>
         <p>Desenvolvido por Gabriel Sena. 2025</p>
     </footer>
+    <script src="/adot/public/scripts/imgPreview.js"></script>
 </body>
 
 </html>

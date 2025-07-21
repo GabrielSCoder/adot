@@ -4,12 +4,6 @@ class PetController
 {
     public function index()
     {
-        $title   = "Pet";
-        $message = "Lista de pets";
-    }
-
-    public function listar()
-    {
         $pets     = PetModel::getAll();
         $title    = "Pet - lista";
         $viewPath = __DIR__ . "/../views/Pet/tabela.php";
@@ -42,7 +36,7 @@ class PetController
     {
         if (PetModel::delete($id))
         {
-            header("Location: ?pagina=pet&action=listar");
+            header("Location: ?pagina=pet");
             exit;
         }
         else
@@ -59,7 +53,7 @@ class PetController
         try {
             var_dump($_POST);
             PetModel::save($pet, $quadro_medico);
-            header('Location: ?pagina=pet&action=listar');
+            header('Location: ?pagina=pet');
         }
         catch (Exception $e)
         {

@@ -20,7 +20,7 @@ class Pet
         $this->nome = $params['nome'] ?? null;
         $this->sexo = $params['sexo'] ?? null;
         $this->data_nascimento = $params['data_nascimento'] ?? null;
-        $this->comentario = $params['comentario'] ?? "";
+        $this->comentario = $params['comentario'] ?? null;
         $this->tutor_id = $params['tutor_id'] ?? null;
         $this->quadro_medico_id = $params['quadro_medico_id'] ?? "";   
         $this->especie_id = $params['especie_id'] ?? null;

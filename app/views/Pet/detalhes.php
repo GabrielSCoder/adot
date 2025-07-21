@@ -15,11 +15,17 @@
             <p><strong>Espécie:</strong> <?= $pet['especie_id'] == 1 ? 'Cachorro' : 'Gato' ?></p>
             <p><strong>Sexo:</strong> <?= $pet['sexo'] == 0 ? 'Macho' : 'Fêmea' ?></p>
             <p><strong>Data de Nascimento:</strong> <?= date('d/m/Y', strtotime($pet['data_nascimento'])) ?></p>
-            <?php if (!empty($pet['comentario'])): ?>
-            <p><strong>Comentários:</strong> <?= $pet['comentario'] ?></p>
-            <?php endif; ?>
         </div>
     </div>
+
+
+    <?php if (!empty($pet['comentario'])): ?>
+    <hr style="margin: 30px 0;" />
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <h3>Sobre mim</h3>
+        <p style="padding: 10px;"><?= $pet['comentario'] ?></p>
+    </div>
+    <?php endif; ?>
 
     <hr style="margin: 30px 0;" />
 

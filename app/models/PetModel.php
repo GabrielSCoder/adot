@@ -104,14 +104,14 @@ class PetModel
 
             QuadroMedicoModel::update($quadro_medico, $pdo);
 
-            $stmt = $pdo->prepare("UPDATE animal SET  nome = :nome, sexo =  :sexo, data_nascimento = :data_nascimento , tutor_id = :tutor_id, quadro_medico_id = :quadro_medico_id WHERE id = :id");
+            $stmt = $pdo->prepare("UPDATE animal SET  nome = :nome, sexo =  :sexo, data_nascimento = :data_nascimento , tutor_id = :tutor_id, quadro_medico_id = :quadro_medico_id, comentario = :comentario WHERE id = :id");
             $stmt->bindParam(":id", $pet->id);
             $stmt->bindParam(":nome", $pet->nome);
             $stmt->bindParam(":sexo", $pet->sexo, PDO::PARAM_INT);
             $stmt->bindParam(":data_nascimento", $pet->data_nascimento);
             $stmt->bindParam(":tutor_id", $pet->tutor_id, PDO::PARAM_INT);
             $stmt->bindParam(":quadro_medico_id", $pet->quadro_medico_id, PDO::PARAM_INT);
-            // $stmt->bindParam(":comentario", $pet->comentario);
+            $stmt->bindParam(":comentario", $pet->comentario);
             $stmt->execute();
 
             $pdo->commit();

@@ -14,8 +14,8 @@ class UsuarioController
     function criar () 
     {
         $user = new Usuario([
-            'usuario' => 'gabriel',
-            'senha' => '1999'
+            'usuario' => 'admin',
+            'senha' => '12345678AA'
         ]);
 
         $user->criptografar();
@@ -38,6 +38,12 @@ class UsuarioController
             $viewPath = __DIR__ . "/../views/usuario/loginView.php";
             require __DIR__ . "/../views/home_template.php";
         }
+    }
 
+    function uploadImg()
+    {
+        $title = "Teste de upload";
+        $viewPath = __DIR__ . "/../views/Usuario/uploadView.php";
+        require __DIR__ . "/../views/home_template.php";
     }
 }

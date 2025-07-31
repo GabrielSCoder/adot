@@ -19,6 +19,7 @@ html {
 
 body {
     display: flex;
+    font-family: Arial, sans-serif;
     flex-direction: column;
     background-color: white;
     max-width: 1400px;

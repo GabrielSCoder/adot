@@ -1,7 +1,13 @@
 <?php
 
-session_start();
-date_default_timezone_set("America/Fortaleza");
+require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../app/core/Core.php';
+
+use Dotenv\Dotenv;
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 spl_autoload_register(function ($class)
 {
@@ -11,7 +17,7 @@ spl_autoload_register(function ($class)
         __DIR__ . '/../app/models/',
         __DIR__ . '/../app/configs/',
     ];
-
+    
     foreach ($folders as $folder)
     {
         $file = $folder . $class . '.php';
@@ -23,8 +29,11 @@ spl_autoload_register(function ($class)
     }
 });
 
+session_start();
+date_default_timezone_set("America/Fortaleza");
 
-require_once __DIR__ . '/../app/core/Core.php';
+$dotenv = Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->safeLoad();
 
 $core = new Router();
 

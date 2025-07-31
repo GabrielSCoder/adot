@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title; ?></title>
-    <link rel="stylesheet" href="/adot/public/styles/style2.css">
+    <link rel="stylesheet"
+        href="<?= $_SERVER['HTTP_HOST'] === 'localhost' ? '/adot/public/styles/style2.css' : '/styles/style2.css'; ?>">
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -23,7 +24,7 @@
             <a href="?pagina=adocao">Adoção</a>
             <a href="?pagina=contato">Contato</a>
             <?php if (isset($_SESSION['usuario'])): ?>
-            <a href="?pagina=tutor">ADM</a>
+            <a href=" ?pagina=tutor">ADM</a>
             <a href="?pagina=auth&action=logout" onclick=" return(confirm('Deseja finalizar a sessão?'))">Sair</a>
             <?php endif; ?>
         </nav>

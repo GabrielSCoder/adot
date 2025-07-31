@@ -1,6 +1,5 @@
 <?php
 
-// require __DIR__ . '/../configs/cloud.php';
 
 class PetModel
 {

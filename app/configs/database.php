@@ -1,5 +1,6 @@
 <?php
 
+require __DIR__ . '/../../vendor/autoload.php';
 
 class DBConfig
 {
@@ -16,10 +17,10 @@ class DBConfig
     public static function getProdConfig()
     {
         return (object)[
-            'host'   => getenv('host'),
-            'dbname' => getenv('dbname'),
-            'user'   => getenv('user'),
-            'pass'   => getenv('pass'),
+            'host'   => $_ENV['DB_HOST'],
+            'dbname' => $_ENV['DB_NAME'],
+            'user'   => $_ENV['DB_USER'],
+            'pass'   => $_ENV['DB_PASS'],
         ];
     }
 

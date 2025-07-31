@@ -1,5 +1,6 @@
 <?php
 
+
 class DBConfig
 {
     public static function getDevConfig()
@@ -15,10 +16,11 @@ class DBConfig
     public static function getProdConfig()
     {
         return (object)[
-            'host'   => 'sql311.infinityfree.com',
-            'dbname' => 'if0_39416642_adot_dev',
-            'user'   => 'if0_39416642',
-            'pass'   => 'AzHaTsOJ609',
+            'host'   => getenv('host'),
+            'dbname' => getenv('dbname'),
+            'user'   => getenv('user'),
+            'pass'   => getenv('pass'),
         ];
     }
+
 }

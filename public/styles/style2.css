@@ -7,12 +7,6 @@
     box-sizing: border-box;
 }
 
-html,
-body {
-    height: 100%;
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-}
 
 html {
     background-image: url('../imgs/wallpaper_seamless3.jpg');
@@ -24,11 +18,17 @@ html {
 }
 
 body {
-    max-width: 1400px;
-    width: 100%;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
+    background-color: white;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+/* Quando o modal está aberto, remover scroll */
+html.modal-open {
+    overflow: hidden;
 }
 
 
@@ -37,7 +37,7 @@ body {
 ========================= */
 
 header {
-    background-color: white;
+    background-color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -104,6 +104,7 @@ main {
     flex: 1;
     padding: 20px;
     background-color: #fff;
+    /* background-color: black; */
 }
 
 .view-content {
@@ -199,6 +200,7 @@ form input[type="checkbox"] {
     margin-right: 10px;
 }
 
+#btn_confirm_preview_imgs,
 form button,
 form input[type="submit"] {
     background-color: #00CFFF;
@@ -264,6 +266,7 @@ form input[type="submit"]:hover {
     display: inline-block;
 }
 
+#btn_confirm_preview_imgs:hover,
 .btn-adicionar:hover,
 .btn-banner:hover,
 .btn-ver:hover {
@@ -422,6 +425,60 @@ form input[type="submit"]:hover {
     background-color: #0097b2;
 }
 
+#form_preview_modal {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+#form_preview_modal #container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    gap: 12px;
+    border-radius: 5px;
+    min-width: 600px;
+    min-height: 600px;
+    position: relative;
+    z-index: 30;
+}
+
+#form_preview_modal #container #btn_close_preview_imgs {
+    background-color: transparent;
+    border-radius: 100%;
+    border: none;
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    height: 20px;
+    width: 20px;
+    background-color: #F55852;
+    z-index: 10;
+    cursor: pointer;
+}
+
+#form_preview_modal #container #btn_confirm_preview_imgs {
+    position: absolute;
+    bottom: 6px;
+    width: 20px;
+    padding: 4px;
+    width: 60px;
+}
+
+#form_preview_modal #container #btn_close_preview_imgs:hover {
+    background-color: #f77974;
+}
 
 
 

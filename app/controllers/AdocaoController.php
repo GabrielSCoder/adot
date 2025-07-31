@@ -11,8 +11,7 @@ class AdocaoController
 
         foreach ($pets as &$pet)
         {
-            $imagem = ImagemPetModel::getFistImgPetById($pet['id']);
-            $pet['foto_url'] = $imagem ? $imagem['caminho'] : 'img/default.png';
+            $pet['foto_url'] = $pet ? $pet['imagem_url'] : 'img/default.png';
         }
 
         unset($pet);
@@ -29,8 +28,7 @@ class AdocaoController
         $tutor = TutorModel::getById($pet['tutor_id']);
         $endereco = EnderecoModel::getById($tutor['endereco_id']);
         $viewPath = __DIR__ . "/../views/Pet/detalhes.php";
-        $imagem = ImagemPetModel::getFistImgPetById($pet['id']);
-        $pet['foto_url'] = $imagem ? $imagem['caminho'] : 'img/default.png';
+        $pet['foto_url'] = $pet ? $pet['imagem_url'] : 'img/default.png';
         
         include __DIR__ . "/../views/home_template.php";
     }

@@ -43,6 +43,7 @@ class UsuarioController
     function uploadImg()
     {
         $title = "Teste de upload";
+        $action = "/adot/app/core/Upload.php";
         $viewPath = __DIR__ . "/../views/Usuario/uploadView.php";
         require __DIR__ . "/../views/home_template.php";
     }

@@ -1,5 +1,8 @@
 <?php
 
+require __DIR__ . '/../../vendor/autoload.php';
+require __DIR__ . '/../configs/cloud.php';
+
 class PetController
 {
     public function index()
@@ -47,11 +50,26 @@ class PetController
 
     public function salvar()
     {
+        $cloud = Cloud::getCloudinary();
         $pet = new Pet($_POST);
         $quadro_medico = new QuadroMedico($_POST);
+        $file  = $_FILES['imagem']['tmp_name'][0] ?? null;
+        $pasta = 'Upload/'.$pet->nome;
+        $nome = $pet->nome.'_img1';
 
         try {
-            var_dump($_POST);
+
+            if (!empty($file)) {
+                
+                $uploadResult =  $cloud->uploadApi()->upload($file, [
+                    'folder' => $pasta,
+                    'public_id' => $nome,
+                    'overwrite' => true
+                ]);
+    
+                $pet->imagem_url = $uploadResult['secure_url'];
+            }
+            
             PetModel::save($pet, $quadro_medico);
             header('Location: ?pagina=pet');
         }

@@ -1,0 +1,7 @@
+{
+    "name": "gabriel/adot",
+    "description": "adoption site",
+    "require": {
+        "cloudinary/cloudinary_php": "^3.1"
+    }
+}

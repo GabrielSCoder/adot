@@ -5,7 +5,7 @@
 
     <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
         <div style="flex: 1; min-width: 250px;">
-            <img src="<?= $imagem ? $imagem['caminho'] : 'public/img/default.png' ?>" alt="Foto do pet"
+            <img src="<?= $pet['foto_url'] ? $pet['foto_url'] : 'public/img/default.png' ?>" alt="Foto do pet"
                 style="width: 100%; border-radius: 10px; object-fit: cover;" />
         </div>
 

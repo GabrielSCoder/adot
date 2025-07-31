@@ -24,17 +24,16 @@
             <a href="?pagina=contato">Contato</a>
             <?php if (isset($_SESSION['usuario'])): ?>
             <a href="?pagina=tutor">ADM</a>
-            <a href="?pagina=auth&action=logout">Sair</a>
+            <a href="?pagina=auth&action=logout" onclick=" return(confirm('Deseja finalizar a sessão?'))">Sair</a>
             <?php endif; ?>
         </nav>
     </header>
-    <main>
+    <main id="main">
         <?php include $viewPath; ?>
     </main>
     <footer>
         <p>Desenvolvido por Gabriel Sena. 2025</p>
     </footer>
-    <script src="/adot/public/scripts/imgPreview.js"></script>
 </body>
 
 </html>
